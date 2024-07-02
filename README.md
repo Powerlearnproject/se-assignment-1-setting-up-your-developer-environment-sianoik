@@ -11,44 +11,103 @@ This assignment aims to familiarize you with the tools and configurations necess
 #Tasks:
 
 1. Select Your Operating System (OS):
-   Choose an operating system that best suits your preferences and project requirements. Download and Install Windows 11. https://www.microsoft.com/software-download/windows11
+   Choose an operating system that best suits your preferences and project requirements. Download and Install Windows 11. https://www.microsoft.com/software-download/windows11/ 
+   Operating system: Linux Ubuntu 22.04 LTS
+   Requirements: 2GHz dual-core processor
+                 4gb ram
+                 25 gb of free hard drive space
+Installing linux ubuntu on a laptop involves several steps. STEP 1
+    - Backup your data: ensure that you back up any important documents since installation erases everything. check that the system is compatible with mininmum requirements. 
+                   STEP 2
+                   Download Ubuntu ISO https://ubuntu.com/download/desktop 
+Create a bootable USB, download Etcher and install, Open etcher and download the Ubuntu ISO file, select the USB drive, click 'flash' to create bootable USB
+   STEP 3: Boot from USB Drive
+   - insert USB to your laptop, restart your laptop and enter BIOS settings, change boot order, save and edit
+   STEP 4: INSTALL UBUNTU
+   -Choose "Try Ubuntu": When the Ubuntu boot menu appears, select "Try Ubuntu" to load the live session.
+   -Start the Installer: In the live session, double-click the "Install Ubuntu" icon on the desktop to start the installation process.
+   -Select Language: Choose your preferred language and click "Continue".
+   -Keyboard Layout: Select your keyboard layout and click "Continue".
+   -Updates and Other Software: Choose whether to install updates and third-party software for graphics and Wi-Fi hardware and additional media formats. Click "Continue".
+   -Erase Disk and Install Ubuntu: This option will delete all data on the disk and install Ubuntu.
+   -Allocate Drive Space: If you chose "Erase Disk and Install Ubuntu", select the disk you want to use and click "Install Now". Confirm any warnings about data loss.
+   -Time Zone: Select your time zone and click "Continue".
+   -User Information: Enter your name, a computer name, a username, and a password. Click "Continue".
+
+   STEP 5: 
+   -wait for installation to complete
+   -Restart the pc once the intallation is complete 
+   -Log in using the password and user name created. 
 
 2. Install a Text Editor or Integrated Development Environment (IDE):
-   Select and install a text editor or IDE suitable for your programming languages and workflow. Download and Install Visual Studio Code. https://code.visualstudio.com/Download
-3. Set Up Version Control System:
-   Install Git and configure it on your local machine. Create a GitHub account for hosting your repositories. Initialize a Git repository for your project and make your first commit. https://github.com
+   Select and install a text editor or IDE suitable for your programming languages and workflow. Download and Install Visual Studio Code. https://code.visualstudio.com/Download 
+    Installing Vscode for linux
+    - https://code.visualstudio.com/docs/setup/linux
+    1. update the system: sudo apt update
+    2. Install dependencies: sudo apt install software-properties-common apt-transport-https wget
+    3. enable vscode repository:sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
+    4. install vscode: sudo apt install code
+    5. launch Vs code
+
+
+
+3. Set Up Version  System:
+   Install Git and configure it on your local machine. Create a GitHub account for hosting your repositories. Initialize a Git repository for your project and make your first commit. https://github.com 
+   https://github.com/sianoik  - created github account 
+   steps of creating a github account;
+   - visit the website for github https://github.com/
+   - on homepage; click sign up
+   -  enter account details such as username, and email address, set up the password
+   - complete the verification process
+   - set up profile such as profile picture, bio and important links
+   - start using your github 
+
 
 4. Install Necessary Programming Languages and Runtimes:
   Instal Python from http://wwww.python.org programming language required for your project and install their respective compilers, interpreters, or runtimes. Ensure you have the necessary tools to build and execute your code.
 
+  installing python: python on linux is pre-installed python3 -v
+  write a simple python programme print("Hello, World!")
+
+
 5. Install Package Managers:
    If applicable, install package managers like pip (Python).
+   check pip install: pip3 --version this will show the type of pip installed
+   - to install sudo apt update
+sudo apt install python3-pip
+
 
 6. Configure a Database (MySQL):
    Download and install MySQL database. https://dev.mysql.com/downloads/windows/installer/5.7.html
+   https://dev.mysql.com/downloads/mysql/ using the link to the website download mysql and follow procedural 
+   to connect mysql with python:
+   import mysql.connector. 
+from mysql.connector import Error
+
+try:
+    connection = mysql.connector.connect(
+        host='localhost',
+        database='mydatabase',
+        user='myuser',
+        password='mypassword'
+    )
+    if connection.is_connected():
+        db_Info = connection.get_server_info()
+        print("Connected to MySQL Server version ", db_Info)
+        cursor = connection.cursor()
+        cursor.execute("select database();")
+        record = cursor.fetchone()
+        print("You're connected to database: ", record)
+
+except Error as e:
+    print("Error while connecting to MySQL", e)
+finally:
+    if connection.is_connected():
+        cursor.close()
+        connection.close()
+        print("MySQL connection is closed")
+
 
 7. Set Up Development Environments and Virtualization (Optional):
    Consider using virtualization tools like Docker or virtual machines to isolate project dependencies and ensure consistent environments across different machines.
-
-8. Explore Extensions and Plugins:
-   Explore available extensions, plugins, and add-ons for your chosen text editor or IDE to enhance functionality, such as syntax highlighting, linting, code formatting, and version control integration.
-
-9. Document Your Setup:
-    Create a comprehensive document outlining the steps you've taken to set up your developer environment. Include any configurations, customizations, or troubleshooting steps encountered during the process. 
-
-#Deliverables:
-- Document detailing the setup process with step-by-step instructions and screenshots where necessary.
-- A GitHub repository containing a sample project initialized with Git and any necessary configuration files (e.g., .gitignore).
-- A reflection on the challenges faced during setup and strategies employed to overcome them.
-
-#Submission:
-Submit your document and GitHub repository link through the designated platform or email to the instructor by the specified deadline.
-
-#Evaluation Criteria:**
-- Completeness and accuracy of setup documentation.
-- Effectiveness of version control implementation.
-- Appropriateness of tools selected for the project requirements.
-- Clarity of reflection on challenges and solutions encountered.
-- Adherence to submission guidelines and deadlines.
-
-Note: Feel free to reach out for clarification or assistance with any aspect of the assignment.
+ Docker: 
